@@ -46,3 +46,5 @@ Chạy lại lệnh kiểm tra trên Host 2:
 ```Bash
 ls -lh /var/lib/libvirt/images/vm1.qcow2
 ```
+
+## Trường hợp khởi tạo/ Reboot Vm trên HOST xong nhưng chạy lệnh List thì không có IP nào
