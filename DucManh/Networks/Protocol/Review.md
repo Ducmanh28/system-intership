@@ -8,4 +8,3 @@ Xét theo từng tầng, chúng ta có 1 số giao thức mạng phổ biến nh
 |Internet|Layer 3|IPv4, IPv6, ICMP, IPsec, OSPF, BGP|
 |Network Access|Layer 2, 1|Ethernet, Wi-Fi, 802.1Q, ARP, LACP, Cáp quang/Đồng|
 
-## Tầng Application
