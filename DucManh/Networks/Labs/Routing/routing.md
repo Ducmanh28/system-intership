@@ -1,4 +1,4 @@
-# Hướng dẫn Cấu hình Static Routing trên Cisco Packet Tracer
+# Cấu hình Static Routing trên Cisco Packet Tracer
 
 ## 1. Mô tả Hệ thống & Quy hoạch Mạng
 
