@@ -45,8 +45,6 @@ Hệ thống mô phỏng kết nối liên mạng giữa hai chi nhánh thông q
 | **Switch1** | `Fa0/1`, `Fa0/24` | *(Không gán IP)* | *(Layer 2)* | *(Không có)* | `Laptop0`, `Router3 (Gi0/2)` | Cáp thẳng |
 | **Laptop0** | `FastEthernet0` | `192.168.2.10` | `255.255.255.0` | `192.168.2.1` | `Switch1 (Fa0/1)` | Cáp thẳng |
 
----
-
 ## 2. Mô tả Bài Lab & Mục tiêu
 
 ### 2.1. Mô tả bài lab
@@ -57,8 +55,6 @@ Thực hành kỹ thuật định tuyến tĩnh (**Static Routing**) trên hệ 
 2. **Trường hợp 1 (Static Routing cơ bản):** Định tuyến tĩnh 2 chiều để `PC0` và `Laptop0` giao tiếp qua nhánh chính phía trên (`Router1` $\leftrightarrow$ `Router0` $\leftrightarrow$ `Router3`).
 3. **Trường hợp 2 (Floating Static Route — Dự phòng tự động):** Cấu hình tuyến dự phòng qua nhánh dưới (`Router2`) với chỉ số **Administrative Distance (AD) = 5**. Khi đứt cáp nhánh trên, hệ thống tự động chuyển hướng sang nhánh dưới.
 4. **Trường hợp 3 (Static ECMP Load Balancing — Cân bằng tải):** Đặt đồng mức ưu tiên (**AD = 1**) cho cả 2 nhánh để chia tải lưu lượng song song qua cả `Router0` và `Router2`.
-
----
 
 ## 3. Thực hành
 
@@ -181,8 +177,6 @@ Router1#
    * Từ **Laptop0** (`Command Prompt`): gõ `ping 192.168.2.1` $\rightarrow$ Phải thành công (`Reply from 192.168.2.1`).
    * Từ CLI của **Router1**: gõ `ping 10.0.1.2` và `ping 10.0.4.1` $\rightarrow$ Phải hiện `!!!!!` (tỷ lệ 100%).
 
----
-
 ### 3.2. Trường hợp 1: Static Routing cơ bản (Tuyến đơn nhánh trên)
 
 #### Bước 1: Nhập lệnh định tuyến tĩnh 2 chiều
@@ -230,7 +224,6 @@ end
    * Bấm nút **Capture / Forward** liên tiếp: bạn sẽ thấy gói tin chạy từ `PC0` $\rightarrow$ `Switch0` $\rightarrow$ `Router1` $\rightarrow$ `Router0` $\rightarrow$ `Router3` $\rightarrow$ `Switch1` $\rightarrow$ `Laptop0` và quay ngược lại theo đúng nhánh trên.
    * Xong việc, chuyển lại về chế độ **Realtime** ở góc dưới bên phải.
    * ![alt text](/DucManh/Image/image34.png)
----
 
 ### 3.3. Trường hợp 2: Floating Static Route (Dự phòng tự động qua nhánh dưới)
 
@@ -278,9 +271,6 @@ end
     no shutdown
    end
    ```
-
----
-
 ### 3.4. Trường hợp 3: Static ECMP Load Balancing (Cân bằng tải 2 nhánh)
 
 #### Bước 1: Đưa cả 2 tuyến về cùng mức ưu tiên AD = 1
@@ -307,8 +297,6 @@ end
                        [1/0] via 10.0.4.1
    ```
 2. Chuyển sang chế độ **Simulation**, dùng **Add Simple PDU (P)** gửi liên tiếp 2 gói tin từ `PC0` sang `Laptop0` rồi bấm **Capture / Forward**: gói tin thứ nhất đi qua nhánh trên (`Router0`) và gói tin thứ hai đi qua nhánh dưới (`Router2`).
-
----
 
 ## 4. Lưu cấu hình toàn bộ hệ thống
 
